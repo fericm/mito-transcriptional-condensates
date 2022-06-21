@@ -1,4 +1,4 @@
-function [C_I,C_T,C_BG,I]=FRAP_quick(n,filelocation,filenameroot,filenameend,filezeros,ts,t_FRAP,H_I,H_T,H_BG,man_V)
+function [C_I,C_T,C_BG,I]=FRAP_quick(n,filelocation,filenameroot,filenameend,filezeros,ts,t_FRAP,H_I,H_T,H_BG,t_thresh,man_V)
 %ts = time interval (s)
 %Determine the bulk flow
 %[pivData]=bulk_flow(n,filelocation,filenameroot,filenameend,filezeros)
@@ -8,8 +8,8 @@ cmap=jet(n)
 
 %INITIAL
     str_i=strcat(filelocation,filenameroot,num2str(1,filezeros),filenameend); %Creates a string for each file
-    H_im_i(:,:)=imgaussfilt(double(imread(str_i)),5)./(2^16);
-    BW_i=imclearborder(im2bw(H_im_i,0.3)); %
+    H_im_i(:,:)=imgaussfilt(double(imread(str_i)),15)./(2^16);
+    BW_i=imclearborder(im2bw(H_im_i,t_thresh)); %
     
     figure(1)
     imshow(BW_i)
@@ -23,8 +23,8 @@ cmap=jet(n)
     
 %FINAL
     str_f=strcat(filelocation,filenameroot,num2str(n-1,filezeros),filenameend); %Creates a string for each file
-    H_im_f(:,:)=imgaussfilt(double(imread(str_f)),5)./(2^16);
-    BW_f=imclearborder(im2bw(H_im_f,0.3));%imclearborder
+    H_im_f(:,:)=imgaussfilt(double(imread(str_f)),15)./(2^16);
+    BW_f=imclearborder(im2bw(H_im_f,t_thresh));%imclearborder
     figure(2)
     imshow(BW_f)
     rf=regionprops(BW_f,H_im_f,'Area','Centroid')
@@ -33,7 +33,7 @@ cmap=jet(n)
     
     [mf,indf]=max(rfA)
     
-    if nargin>10
+    if nargin>11
         Vx=man_V(1);
         Vy=man_V(2);
          disp('case 2')
@@ -138,7 +138,6 @@ I(:,5)=I(:,2).*I(:,4);
 %% Normalization Step 4: Determination of the relative fluorescence signal in the bleached region
 I_prebleach=mean(I(t_prebleach,2))%mean(C_I(t_prebleach,2));
 I(:,6)=I(:,5)./I_prebleach; 
-
 
 figure(2) 
 set(gcf,'color','w')
