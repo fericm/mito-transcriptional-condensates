@@ -1,4 +1,4 @@
-%% 2021510
+%% 20210510
 %RED = TFB2M, GREEN = TFAM, BLUE = DAPI, FR = POLRMT
 close all
 clear all force
@@ -10,7 +10,7 @@ leg={'TFB2M','TFAM','DNA','POLRMT'}
 save('SIM/20210510_7XPEG_NTP_5min_no1_P.mat','P');
 save('SIM/20210510_7XPEG_NTP_5min_no1_DATA.mat','DATA');
 save('SIM/20210510_7XPEG_NTP_5min_no1_I.mat','I');
-%% 2021510
+%% 20210510
 %RED = TFB2M, GREEN = TFAM, BLUE = DAPI, FR = POLRMT
 close all
 clear all force
@@ -22,7 +22,7 @@ leg={'TFB2M','TFAM','DNA','POLRMT'}
 save('SIM/20210510_7XPEG_NTP_5min_no2_P.mat','P');
 save('SIM/20210510_7XPEG_NTP_5min_no2_DATA.mat','DATA');
 save('SIM/20210510_7XPEG_NTP_5min_no2_I.mat','I');
-%% 2021510
+%% 20210510
 %RED = TFB2M, GREEN = TFAM, BLUE = DAPI, FR = POLRMT
 close all
 clear all force
@@ -35,7 +35,7 @@ save('SIM/20210510_7XPEG_NTP_5min_no3_P.mat','P');
 save('SIM/20210510_7XPEG_NTP_5min_no3_DATA.mat','DATA');
 save('SIM/20210510_7XPEG_NTP_5min_no3_I.mat','I');
 
-%% 2021510
+%% 20210510
 %RED = TFB2M, GREEN = TFAM, BLUE = DAPI, FR = POLRMT
 close all
 clear all force
@@ -47,7 +47,7 @@ leg={'TFB2M','TFAM','DNA','POLRMT'}
 save('SIM/20210510_7XPEG_NTP_10min_no1_P.mat','P');
 save('SIM/20210510_7XPEG_NTP_10min_no1_DATA.mat','DATA');
 save('SIM/20210510_7XPEG_NTP_10min_no1_I.mat','I');
-%% 2021510
+%% 20210510
 %RED = TFB2M, GREEN = TFAM, BLUE = DAPI, FR = POLRMT
 close all
 clear all force
@@ -59,7 +59,7 @@ leg={'TFB2M','TFAM','DNA','POLRMT'}
 save('SIM/20210510_7XPEG_NTP_10min_no2_P.mat','P');
 save('SIM/20210510_7XPEG_NTP_10min_no2_DATA.mat','DATA');
 save('SIM/20210510_7XPEG_NTP_10min_no2_I.mat','I');
-%% 2021510
+%% 20210510
 %RED = TFB2M, GREEN = TFAM, BLUE = DAPI, FR = POLRMT
 close all
 clear all force
@@ -71,7 +71,7 @@ leg={'TFB2M','TFAM','DNA','POLRMT'}
 save('SIM/20210510_7XPEG_NTP_10min_no3_P.mat','P');
 save('SIM/20210510_7XPEG_NTP_10min_no3_DATA.mat','DATA');
 save('SIM/20210510_7XPEG_NTP_10min_no3_I.mat','I');
-%% 2021510
+%% 20210510
 %RED = TFB2M, GREEN = TFAM, BLUE = DAPI, FR = POLRMT
 close all
 clear all force
@@ -83,7 +83,7 @@ leg={'TFB2M','TFAM','DNA','POLRMT'}
 save('SIM/20210510_7XPEG_NTP_20min_no1_P.mat','P');
 save('SIM/20210510_7XPEG_NTP_20min_no1_DATA.mat','DATA');
 save('SIM/20210510_7XPEG_NTP_20min_no1_I.mat','I');
-%% 2021510
+%% 20210510
 %RED = TFB2M, GREEN = TFAM, BLUE = DAPI, FR = POLRMT
 close all
 clear all force
@@ -95,7 +95,7 @@ leg={'TFB2M','TFAM','DNA','POLRMT'}
 save('SIM/20210510_7XPEG_NTP_20min_no2_P.mat','P');
 save('SIM/20210510_7XPEG_NTP_20min_no2_DATA.mat','DATA');
 save('SIM/20210510_7XPEG_NTP_20min_no2_I.mat','I');
-%% 2021510
+%% 20210510
 %RED = TFB2M, GREEN = TFAM, BLUE = DAPI, FR = POLRMT
 close all
 clear all force
@@ -108,7 +108,7 @@ save('SIM/20210510_7XPEG_NTP_20min_no3_P.mat','P');
 save('SIM/20210510_7XPEG_NTP_20min_no3_DATA.mat','DATA');
 save('SIM/20210510_7XPEG_NTP_20min_no3_I.mat','I');
 
-%% 2021510
+%% 20210510
 %RED = TFB2M, GREEN = TFAM, BLUE = DAPI, FR = POLRMT
 close all
 clear all force
@@ -120,7 +120,7 @@ leg={'TFB2M','TFAM','DNA','POLRMT'}
 save('SIM/20210510_7XPEG_NTP_40min_no1_P.mat','P');
 save('SIM/20210510_7XPEG_NTP_40min_no1_DATA.mat','DATA');
 save('SIM/20210510_7XPEG_NTP_40min_no1_I.mat','I');
-%% 2021510
+%% 20210510
 %RED = TFB2M, GREEN = TFAM, BLUE = DAPI, FR = POLRMT
 close all
 clear all force
@@ -132,7 +132,7 @@ leg={'TFB2M','TFAM','DNA','POLRMT'}
 save('SIM/20210510_7XPEG_NTP_40min_no2_P.mat','P');
 save('SIM/20210510_7XPEG_NTP_40min_no2_DATA.mat','DATA');
 save('SIM/20210510_7XPEG_NTP_40min_no2_I.mat','I');
-%% 2021510
+%% 20210510
 %RED = TFB2M, GREEN = TFAM, BLUE = DAPI, FR = POLRMT
 close all
 clear all force
@@ -144,7 +144,7 @@ leg={'TFB2M','TFAM','DNA','POLRMT'}
 save('SIM/20210510_7XPEG_NTP_40min_no3_P.mat','P');
 save('SIM/20210510_7XPEG_NTP_40min_no3_DATA.mat','DATA');
 save('SIM/20210510_7XPEG_NTP_40min_no3_I.mat','I');
-%% 2021510
+%% 20210510
 %RED = TFB2M, GREEN = TFAM, BLUE = DAPI, FR = POLRMT
 close all
 clear all force
@@ -156,7 +156,7 @@ leg={'TFB2M','TFAM','DNA','POLRMT'}
 save('SIM/20210510_7XPEG_NTP_60min_no1_P.mat','P');
 save('SIM/20210510_7XPEG_NTP_60min_no1_DATA.mat','DATA');
 save('SIM/20210510_7XPEG_NTP_60min_no1_I.mat','I');
-%% 2021510
+%% 20210510
 %RED = TFB2M, GREEN = TFAM, BLUE = DAPI, FR = POLRMT
 close all
 clear all force
@@ -168,7 +168,7 @@ leg={'TFB2M','TFAM','DNA','POLRMT'}
 save('SIM/20210510_7XPEG_NTP_60min_no2_P.mat','P');
 save('SIM/20210510_7XPEG_NTP_60min_no2_DATA.mat','DATA');
 save('SIM/20210510_7XPEG_NTP_60min_no2_I.mat','I');
-%% 2021510
+%% 20210510
 %RED = TFB2M, GREEN = TFAM, BLUE = DAPI, FR = POLRMT
 close all
 clear all force

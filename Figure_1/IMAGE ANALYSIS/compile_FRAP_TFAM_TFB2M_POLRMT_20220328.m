@@ -30,28 +30,25 @@ for z=1:3
     elseif z==2
         str={'OutputFRAP/20201221_TFB2M_I1.mat';
             'OutputFRAP/20201221_TFB2M_I2.mat';
-            'OutputFRAP/20201221_TFB2M_I3.mat'; %*
+            'OutputFRAP/20201221_TFB2M_I3.mat';
             'OutputFRAP/20201221_TFB2M_I4.mat';
             'OutputFRAP/20201221_TFB2M_I5.mat';
             'OutputFRAP/20201221_TFB2M_I6.mat';
             'OutputFRAP/20201221_TFB2M_I7.mat';
             'OutputFRAP/20201221_TFB2M_I8.mat';
-            '';%'OutputFRAP/20201221_TFB2M_I9.mat';
             'OutputFRAP/20201221_TFB2M_I10.mat';
             'OutputFRAP/20201221_TFB2M_I11.mat';
-            '';%'OutputFRAP/20201221_TFB2M_I12.mat';
             'OutputFRAP/20201221_TFB2M_I13.mat'};
         
    elseif z==3
         str={'OutputFRAP/20201221_POLRMT_I1.mat';
              'OutputFRAP/20201221_POLRMT_I2.mat';
              'OutputFRAP/20201221_POLRMT_I3.mat';
-            'OutputFRAP/20201221_POLRMT_I4.mat';
-             '';   %'OutputFRAP/20201221_POLRMT_I5.mat';
-            'OutputFRAP/20201221_POLRMT_I6.mat';
+             'OutputFRAP/20201221_POLRMT_I4.mat';
+             'OutputFRAP/20201221_POLRMT_I6.mat';
              'OutputFRAP/20201221_POLRMT_I7.mat';
              'OutputFRAP/20201221_POLRMT_I8.mat';
-             ''% 'OutputFRAP/20201221_POLRMT_I9.mat';
+             'OutputFRAP/20201221_POLRMT_I9.mat';
              'OutputFRAP/20201221_POLRMT_I10.mat';
              'OutputFRAP/20201221_POLRMT_I11.mat'
              };
