@@ -1,4 +1,4 @@
-function [x,C2,C3,C4] = plot_3I_profile(str_g,str_r,str_b,str_k,I_g,I_r,I_b,I_k,Mx,My,pixmic,CLIM,root)
+function [x,C2,C3,C4,C5] = plot_3I_profile(str_g,str_r,str_b,str_k,I_g,I_r,I_b,I_k,Mx,My,pixmic,CLIM,root)
 close all force
 
 %GENERATE IMAGE
@@ -41,7 +41,7 @@ imshowpair(Image_k,Image_r,'ColorChannels',[2 1 0])
 hold on
 plot(CX,CY,'w','LineWidth',1)
 
-%RED
+%RED C2
 figure(3)
 a(:,1)=linspace(0, 1, 1000);
 a(:,2)=linspace(0, 0, 1000);
@@ -61,7 +61,12 @@ set(gca,'FontName','Arial','FontSize',40,'LineWidth',2)
 hold on
 plot(x,smooth((C2./I_r),3),'rs-','LineWidth',4,'MarkerSize',30,'MarkerFaceColor','r','MarkerEdgeColor','k')
 
-%GREEN
+figure(8)
+plot(x,smooth((C2./I_r),3),'rs-','LineWidth',4,'MarkerSize',30,'MarkerFaceColor','r','MarkerEdgeColor','k')
+
+
+
+%GREEN C4
 figure(4)
 a(:,1)=linspace(0, 0, 1000);
 a(:,2)=linspace(0, 1, 1000);
@@ -79,8 +84,12 @@ figure(7)
 plot(x,smooth(C4./I_g,3),'gs-','LineWidth',4,'MarkerSize',30,'MarkerFaceColor','g','MarkerEdgeColor','k')    
 ylabel('Intensity (a.u.)')
 
+figure(9)
+plot(x,smooth(C4./I_g,3),'gs-','LineWidth',4,'MarkerSize',30,'MarkerFaceColor','g','MarkerEdgeColor','k')    
+ylabel('Intensity (a.u.)')
 
-%BLUE
+
+%BLUE C3
 figure(5)
 a(:,1)=linspace(0, 0, 1000);
 a(:,2)=linspace(0, 0, 1000);
@@ -98,7 +107,12 @@ figure(7)
 plot(x,smooth(C3./I_b,3),'ks-','LineWidth',4,'MarkerSize',30,'MarkerFaceColor','w','MarkerEdgeColor','k')    
 ylabel('Intensity (a.u.)')
 
-%CYAN
+figure(10)
+plot(x,smooth(C3./I_b,3),'ks-','LineWidth',4,'MarkerSize',30,'MarkerFaceColor','w','MarkerEdgeColor','k')    
+ylabel('Intensity (a.u.)')
+
+
+%CYAN C5
 figure(6)
 a(:,1)=linspace(0, 1, 1000);
 a(:,2)=linspace(0, 1, 1000);
@@ -116,10 +130,27 @@ figure(7)
 plot(x,smooth(C5./I_k,3),'Cs-','LineWidth',4,'MarkerSize',30,'MarkerFaceColor','C','MarkerEdgeColor','k')    
 ylabel('Intensity (a.u.)')
 
-box on
+figure(11)
+plot(x,smooth(C5./I_k,3),'Cs-','LineWidth',4,'MarkerSize',30,'MarkerFaceColor','C','MarkerEdgeColor','k')    
+ylabel('Intensity (a.u.)')
 
+box on
+figure(7)
 set(gca,'FontName','Arial','FontSize',60,'LineWidth',2)
 pbaspect([5 4 1])
 axis([0 2 0 1])
 xlabel('Position (\mum)')
+box on
+
+for i=8:11
+    figure(i)
+    set(gca,'FontName','Arial','FontSize',60,'LineWidth',2)
+    pbaspect([5 4 1])
+    axis([0 2 0 1])
+    xlabel('Position (\mum)')
+    ylabel('Intensity (a.u.)')
+    set(gcf,'color','w')
+    set(gca,'FontName','Arial','FontSize',60,'LineWidth',2)
+end
+
 end
