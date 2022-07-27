@@ -20,25 +20,35 @@ cmap= [0.9 0.9 0.9;
        1 0 0;
        0 1 0;
        0 1 1;]
- ep=[1:4]
+ep=[1:4]
 for i=[1:5]
     clear DATA DATAc DATAt
     z=1;
     DATAc=zeros(20,5);
     for e=ep
         for j=1:10
-            str_file=strcat(exp{e,:},'_',str{i,1},num2str(j),'_DATA.mat');
-        if exist(str_file)>0
-            DATA=importdata(str_file);
-            size_DATA=size(DATA)
+            str_file_DATA=strcat(exp{e,:},'_',str{i,1},num2str(j),'_DATA.mat');
+            str_file_I=strcat(exp{e,:},'_',str{i,1},num2str(j),'_I.mat');
 
-            for jsz=1:size_DATA(3)
-                DATAt(:,:,z)=DATA(:,:,jsz);
-                z=z+1;
+            if exist(str_file_DATA)>0
+                DATA=importdata(str_file_DATA);
+                I=importdata(str_file_I);
+                size_DATA=size(DATA);
+                
+                for jsz=1:size_DATA(3)
+                    if I(1,8,jsz)>15 %anallyze only condensates greater than 15 pixels in radius (0.5 microns) that can be easily resolved
+                        DATAnorm=zeros(20,5);
+                        for c=1:4
+                            DATAnorm(:,c)=(DATA(:,c,jsz)-min(DATA(:,c,jsz)))./(max(DATA(:,c,jsz))-min(DATA(:,c,jsz))); %normalize each trace to go from 0 to 1
+                        end
+                        DATAnorm(:,5)=DATA(:,5,jsz);
+                        DATAt(:,:,z)=DATAnorm; %DATAt(:,:,z)=DATA(:,:,jsz);
+                        clear DATAnorm
+                        z=z+1;
+                    end
+                end
             end
-        end
-        hold on
-        clear str_file DATA
+            clear str_file DATA I
         end
 
         for r=1:length(DATAt(:,1,1))
@@ -49,7 +59,7 @@ for i=[1:5]
         end
      
         clear z DATAt
-        z=1
+        z=1;
         DATAc=zeros(20,5);
     end
     
@@ -61,20 +71,21 @@ for i=[1:5]
         end
     end
 
-    for j=1:4
-
-            ar=(trapz(DATAc(:,5),DATAc(:,j)));
-            DATAc(:,j)=DATAc(:,j)./ar;
-            DATAc(:,j+5)=DATAc(:,j+5)./ar;
-            clear ar
-            
-    end
+     for j=1:4 %rescaling final curves to go from 0 to 1
+         min_DATA=min(DATAc(:,j));
+         max_DATA=max(DATAc(:,j));
+         DATAc(:,j)=(DATAc(:,j)-min_DATA)./(max_DATA-min_DATA);
+               
+         DATAc(:,j+5)=DATAc(:,j+5)./(max_DATA-min_DATA); %error propagation
+         clear min_DATA max_DATA
+     end
+     
     
     for j=1:4
             figure(j)
-            errorbar(DATAc(:,5),DATAc(:,j),DATAc(:,j+5)./sqrt(length(ep)),'-','Color',cmap(j,:).*(i/5),'LineWidth',4,'Capsize',15)
+            errorbar(DATAc(:,5),DATAc(:,j),DATAc(:,j+5)./sqrt(length(ep)),'-','Color',cmap(j,:).*(i/5),'LineWidth',2,'Capsize',15) %error bars are sem
             hold on
-            h{i,j}=plot(DATAc(:,5),DATAc(:,j),'o-','Color',cmap(j,:).*(i/5),'MarkerFaceColor',cmap(j,:).*(i/5),'LineWidth',4,'MarkerSize',40,'MarkerEdgeColor','k')
+            h{i,j}=plot(DATAc(:,5),DATAc(:,j),'o-','Color',cmap(j,:).*(i/5),'MarkerFaceColor',cmap(j,:).*(i/5),'LineWidth',4,'MarkerSize',40,'MarkerEdgeColor','k');
             hold on
         
             xlabel('Normalized Radial Position')
@@ -82,7 +93,7 @@ for i=[1:5]
             set(gcf,'color','w')
             set(gca,'FontName','Arial','FontSize',60,'LineWidth',4)        
             pbaspect([5 4 1])
-            axis([0 1 0.5 1.5])
+            axis([-0.02 1.02 -0.1 1.1]) 
     end
     
 end

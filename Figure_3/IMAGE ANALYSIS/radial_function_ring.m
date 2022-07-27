@@ -140,7 +140,7 @@ for xx=1:length(centers)
         %ar_new=trapz(hits(:,2),hits_new(:,1));
 %         plot(hits(:,2),hits(:,1)./ar,'o-','Color',cmap(i),'MarkerFaceColor',cmap(i),'LineWidth',3,'MarkerSize',20,'MarkerEdgeColor','k')
 %         hold on
-        DATA(:,i,xx)=hits(:,1)./ar;
+        DATA(:,i,xx)=hits(:,1); %%%DATA(:,i,xx)=hits(:,1)./ar; *************************
         DATA(:,5,xx)=hits(:,2);
         clear hits hits_new ar_new ar
         
